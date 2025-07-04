@@ -107,6 +107,35 @@
 				<div class="inner">
 					<section>
 						<h2>Get in touch</h2>
+						<form id="contactForm">
+  <input type="text" name="name" placeholder="Name" required />
+  <input type="email" name="email" placeholder="Email" required />
+  <textarea name="message" placeholder="Message" required></textarea>
+  <button type="submit">Send</button>
+</form>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value
+    };
+
+    const res = await fetch('/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    const result = await res.json();
+    alert(result.message);
+    form.reset();
+  });
+</script>
+
 						
 						<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdIVqwu6j2IHlkulQlW4EhCHzyJLFYrLpOSxyTtq0_rs2c1_w/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
