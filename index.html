@@ -115,28 +115,34 @@
 </form>
 
 <script>
-  document.getElementById('contactForm').addEventListener('submit', async (e) => {
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const form = e.target;
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value
+
+    const formData = {
+      name: document.querySelector("#name").value,
+      email: document.querySelector("#email").value,
+      message: document.querySelector("#message").value,
     };
 
-    const res = await fetch('/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
+    try {
+      const response = await fetch("https://a-link-backend.onrender.com/save-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    const result = await res.json();
-    alert(result.message);
-    form.reset();
+      const result = await response.json();
+      alert(result.message || "Form submitted!");
+    } catch (err) {
+      alert("Error submitting form");
+    }
   });
 </script>
-
-						
+					
 						<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdIVqwu6j2IHlkulQlW4EhCHzyJLFYrLpOSxyTtq0_rs2c1_w/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
 						<!-- <form action="https://docs.google.com/forms/d/e/1FAIpQLSdIVqwu6j2IHlkulQlW4EhCHzyJLFYrLpOSxyTtq0_rs2c1_w/formResponse" method="POST" target="_blank">
