@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../')));
 
 app.post('/submit', (req, res) => {
+  console.log('New submission received:', req.body);
   const { name, email, message } = req.body;
   const newEntry = { name, email, message, date: new Date().toISOString() };
 
