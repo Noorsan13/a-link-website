@@ -2855,8 +2855,8 @@ input, select, textarea {
 
 				#header .logo .symbol img {
 					display: block;
-					width: 2em;
-					height: 2em;
+					width: 8em;
+					height: 4em;
 				}
 
 		#header nav {
@@ -3327,3 +3327,40 @@ input, select, textarea {
 			}
 
 		}
+
+		/* Custom homepage hero text sizes (A-LINK USA section) */
+#main .inner > header h1:first-of-type {
+  font-size: 3.0em;   /* A-LINK USA */
+  margin-bottom: 0.2em;
+}
+
+#main .inner > header h1:nth-of-type(2) {
+  font-size: 1.6em;   /* Your Partner in... */
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: none; /* theme uppercase yapıyorsa kapatır */
+  margin-bottom: 0.5em;
+}
+
+#main .inner > header h3 {
+  font-size: 1.1em;   /* Supporting organizations... */
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 736px) {
+  #main .inner > header h1:first-of-type {
+    font-size: 2.2em;
+  }
+
+  #main .inner > header h1:nth-of-type(2) {
+    font-size: 1.25em;
+  }
+
+  #main .inner > header h3 {
+    font-size: 0.95em;
+  }
+}
+
