@@ -3364,3 +3364,90 @@ input, select, textarea {
   }
 }
 
+/* Language switch – vertical (English / Türkçe) */
+#menu .lang-switch {
+  display: block;          /* flex’i kapat */
+  margin: 0 0 1.5em 0;
+}
+
+#menu .lang-switch li {
+  display: block;
+  margin-bottom: 0.5em;    /* alt alta boşluk */
+}
+
+#menu .lang-switch a {
+  display: inline-block;
+  text-transform: none;    /* EN/TR uppercase’i kapat */
+  letter-spacing: 0.05em;
+  font-size: 0.9em;
+  padding: 0.4em 0.9em;
+}
+
+/* aktif dil vurgusu */
+#menu .lang-switch a.active {
+  background: rgba(255,255,255,0.15);
+  border-radius: 4px;
+}
+
+/* ===== Language block: make it look different from menu items ===== */
+
+/* language container box */
+#menu .lang-block{
+  padding: 1em;
+  margin: 0 0 1.5em 0;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+}
+
+/* small title */
+#menu .lang-title{
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 0.75em;
+}
+
+/* IMPORTANT: cancel theme menu-list styling for lang-switch */
+#menu .lang-switch{
+  margin: 0;
+  padding: 0;
+}
+
+#menu .lang-switch li{
+  border-top: 0 !important;      /* theme border-top'ı iptal */
+  padding: 0 !important;
+  margin: 0 0 0.6em 0;
+}
+
+#menu .lang-switch li:last-child{
+  margin-bottom: 0;
+}
+
+/* make language links look like buttons */
+#menu .lang-switch a{
+  display: block;                 /* tam genişlik */
+  padding: 0.75em 0.9em !important;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.04);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+/* active language */
+#menu .lang-switch a.active{
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+/* keep normal menu styling for actual page links */
+#menu .menu-links{
+  margin: 0;
+  padding: 0;
+}
+
+
+
