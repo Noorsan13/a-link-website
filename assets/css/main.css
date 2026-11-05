@@ -3449,5 +3449,29 @@ input, select, textarea {
   padding: 0;
 }
 
+/* A-LINK logo */
+#header .a-link-logo {
+	display: block;
+	width: 480px;
+	max-width: 100%;
+	margin-bottom: 2rem;
+	border-bottom: none;
+}
+
+#header .a-link-logo img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+/* Mobil görünüm */
+@media screen and (max-width: 736px) {
+	#header .a-link-logo {
+		width: 320px;
+		max-width: calc(100% - 3rem);
+		margin-bottom: 1.5rem;
+	}
+}
+
 
 
